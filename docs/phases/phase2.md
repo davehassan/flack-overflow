@@ -9,25 +9,27 @@
 
 ## Flux
 ### Views (React Components)
-* NotesIndex
-  - NotesIndexItem
-* NoteForm
+* QuestionsIndex
+  - Question
+   • Answer
+   • AnswerForm
+* QuestionForm
 
 ### Stores
-* Note
+* Question
 
 ### Actions
-* ApiActions.receiveAllNotes
-* ApiActions.receiveSingleNote
-* ApiActions.deleteNote
+* ApiActions.receiveAllQuestions
+* ApiActions.receiveSingleQuestion
+* ApiActions.acceptAnswer
 
 ### ApiUtil
-* ApiUtil.fetchAllNotes
-* ApiUtil.fetchSingleNote
-* ApiUtil.createNote
+* ApiUtil.fetchAllQuestions
+* ApiUtil.fetchSingleQuestion
+* ApiUtil.createQuestion
 * ApiUtil.editNote
-* ApiUtil.destroyNote
+* ApiUtil.createAnswer
+* ApiUtil.editAnswer
 
 ## Gems/Libraries
 * Flux Dispatcher
-* Twitter Bootstrap

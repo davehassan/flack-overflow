@@ -2,17 +2,23 @@
 
 ## Rails
 ### Models
+* Comments
 
 ### Controllers
+Api::CommentsController (create, show, update, destroy)
 
 ### Views
 
 ## Flux
 ### Views (React Components)
+* Comment
+* CommentForm
 
 ### Stores
 
-### Actions
+### ApiUtil
+ApiUtil.fetchSingleQuestion
+ -- refactor
+ApiUtil.createComment
 
 ## Gems/Libraries
-* Quill.js

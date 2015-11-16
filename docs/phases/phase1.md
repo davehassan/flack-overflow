@@ -3,18 +3,21 @@
 ## Rails
 ### Models
 * User
-* Note
+* Question
+* Answer
 
 ### Controllers
 * UsersController (create, new)
 * SessionsController (create, new, destroy)
-* Api::NotesController (create, destroy, index, show, update)
+* Api::QuestionsController (create, index, show, update)
+* Api::AnswersController (create, show, update)
 
 ### Views
 * users/new.html.erb
 * session/new.html.erb
-* notes/index.json.jbuilder
-* notes/show.json.jbuilder
+* questions/index.json.jbuilder
+* questions/show.json.jbuilder
+* answers/show.json.jbuilder
 
 ## Flux
 ### Views (React Components)
