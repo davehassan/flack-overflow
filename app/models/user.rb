@@ -5,7 +5,6 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6, allow_nil: true }
 
   def self.find_by_credentials(username, password)
-    byebug
     user = User.find_by_username(username)
 
     user && user.is_password?(password) ? user : nil
