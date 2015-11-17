@@ -15,8 +15,8 @@ column name | data type | details
 id          | integer   | not null, primary key
 body        | text      | not null
 commenter_id| integer   | not null, foreign key (references users), indexed
-commentable_id| integer | not null, foreign key (references commented id)
-commented_type| string  | not null, (table name)
+commentable_id| integer | not null, foreign key (references commentable id)
+commentable_type| string| not null, (table name)
 
 #questions
 column name | data type | details
@@ -47,3 +47,11 @@ id              | integer   | not null, primary key
 username        | string    | not null, indexed, unique
 password_digest | string    | not null
 session_token   | string    | not null, indexed, unique
+
+## votes
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+voter_id        | integer   | not null, foreign_key (references user)
+votable_id      | integer   | not null, foreign_key (references votable id)
+votable_type    | string    | not null, (table name)

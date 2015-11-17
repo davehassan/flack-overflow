@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   validates :username, :password_digest, :session_token, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
+  has_many :questions, foreign_key: :asker_id
+
   def self.find_by_credentials(username, password)
     user = User.find_by_username(username)
 
