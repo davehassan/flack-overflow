@@ -2,7 +2,7 @@
 
 [Heroku link][heroku]
 
-[heroku]: http://www.herokuapp.com
+[heroku]: http://flack-overflow.herokuapp.com
 
 ## Minimum Viable Product
 
@@ -16,7 +16,7 @@ Rails and React.js. FlackOverflow allows users to:
 - [ ] Create, read, edit, and delete questions and answers
 - [ ] Vote on questions and answers
 - [ ] Tag questions with multiple tags and search questions by tag
-- [ ] Badges 
+- [ ] Badges
 
 
 ## Design Docs
