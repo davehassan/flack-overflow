@@ -10,7 +10,7 @@ var ApiUtil = {
     });
   },
 
-  createQuestion: function (question) {
+  createQuestion: function (question, callback) {
     $.ajax({
       url: "/api/questions",
       type: "POST",
@@ -18,6 +18,7 @@ var ApiUtil = {
       data: { question: question },
       success: function (question) {
         ApiActions.receiveSingleQuestion(question);
+        callback(question.id);
       }
     });
   }

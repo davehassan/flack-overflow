@@ -5,8 +5,12 @@ var QuestionForm = React.createClass({
 
   createQuestion: function (event) {
     event.preventDefault();
-    ApiUtil.createQuestion(this.state);
-    this.props.history.pushState(null, "/questions")
+    ApiUtil.createQuestion(this.state, this._redirectToQShow);
+  },
+
+  _redirectToQShow: function (questionId) {
+    var url = "/questions/" + questionId;
+    this.props.history.pushState(null, url);
   },
 
   updateTitle: function (event) {
