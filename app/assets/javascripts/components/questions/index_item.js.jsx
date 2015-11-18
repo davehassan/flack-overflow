@@ -1,11 +1,12 @@
 var QuestionIndexItem = React.createClass({
   render: function () {
     var question = this.props.question;
+    var url = "/questions/" + question.id;
     return (
-      <div className="question-index-item">
+      <ReactRouter.Link className="question-index-item" to={url}>
         <h5>{question.title}</h5>
         <p>{question.body}</p>
-      </div>
+      </ReactRouter.Link>
     );
   }
 });
