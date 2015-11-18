@@ -9,7 +9,7 @@ var Header = React.createClass({
           <li className="header-links-box">
             <Link className="header-links-item" to="/questions">Questions</Link>
           </li>
-          <li>
+          <li className="header-links-box">
             <Link className="header-links-item" to="/questions/new">Ask a question</Link>
           </li>
         </ul>
