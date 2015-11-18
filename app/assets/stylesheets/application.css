@@ -60,6 +60,10 @@
    cursor: pointer;
  }
 
+ body{
+   font-family: sans-serif;
+ }
+
  /* Clearfix */
 
  .group:after {

@@ -1,0 +1,22 @@
+.header {
+  margin: 0 auto;
+  height: 96px;
+  padding: 0 15px;
+  position: relative;
+}
+
+.header-logo {
+  width: 200px;
+  height: 50px;
+  display: block;
+  font-size: 36px;
+  font-weight: 400;
+  color: orange;
+}
+
+.header-links {
+  display: block;
+  float: right;
+  font-size: 24px;
+  margin: 0 auto;
+}

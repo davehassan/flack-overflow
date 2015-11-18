@@ -7,6 +7,7 @@ $(function() {
     render: function () {
       return (
         <div>
+          <Header />
           {this.props.children}
         </div>
       );
@@ -16,6 +17,7 @@ $(function() {
   var routes = (
     <Route path='/' component={App}>
       <IndexRoute component={QuestionsIndex} />
+      <Route path="questions" component={QuestionsIndex} />
       <Route path='questions/new' component={QuestionForm} />
     </Route>
   );

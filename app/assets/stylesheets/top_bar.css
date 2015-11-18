@@ -1,0 +1,30 @@
+.top-bar {
+  width: 100%;
+  background: black;
+  display: block;
+  color: white;
+  height: 34px;
+  margin: 0 auto;
+}
+
+.top-bar-wrapper {
+  width: 1000px;
+  position: relative;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.top-bar-links {
+  right: 15px;
+  display: block;
+  position: absolute;
+  top: 0;
+  vertical-align: top;
+  padding: 10px 7px 0 7px;
+}
+
+.top-bar-logo {
+  position: absolute;
+  top: 0;
+  padding: 10px 7px 0 7px;
+}
