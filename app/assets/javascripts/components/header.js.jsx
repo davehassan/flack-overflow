@@ -5,10 +5,14 @@ var Header = React.createClass({
     return (
       <header className="header">
         <Link to="/" className="header-logo">Flack Exchange!</Link>
-        <div className="header-links">
-          <Link className="header-links-item" to="/questions">Questions</Link>
-          <Link className="header-links-item" to="/questions/new">Ask a question</Link>
-        </div>
+        <ul className="header-links group">
+          <li className="header-links-box">
+            <Link className="header-links-item" to="/questions">Questions</Link>
+          </li>
+          <li>
+            <Link className="header-links-item" to="/questions/new">Ask a question</Link>
+          </li>
+        </ul>
       </header>
     );
   }

@@ -28,5 +28,11 @@
   font-size: 14px;
   padding: 4px 10px 5px;
   background: grey;
-  margin: 10px auto;
+  color: white;
+}
+
+.header-links-box {
+  margin: 5px;
+  float: left;
+  display: block;
 }

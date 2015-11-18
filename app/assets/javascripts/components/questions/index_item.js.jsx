@@ -5,7 +5,6 @@ var QuestionIndexItem = React.createClass({
     return (
       <ReactRouter.Link className="question-index-item" to={url}>
         <h5>{question.title}</h5>
-        <p>{question.body}</p>
       </ReactRouter.Link>
     );
   }
