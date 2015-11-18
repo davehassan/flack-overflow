@@ -11,12 +11,12 @@ Rails and React.js. FlackOverflow allows users to:
 
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
-- [ ] Create an account
-- [ ] Log in / Log out
+- [x] Create an account
+- [x] Log in / Log out
 - [ ] Create, read, edit, and delete questions and answers
 - [ ] Vote on questions and answers
 - [ ] Tag questions with multiple tags and search questions by tag
-- [ ] Badges
+- [ ] Comments
 
 
 ## Design Docs

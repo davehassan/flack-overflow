@@ -6,6 +6,10 @@
     _questions = questions.slice(0);
   };
 
+  var receiveQuestion = function (question) {
+    _questions.push(question);
+  };
+
   var QuestionStore = root.QuestionStore = $.extend({}, EventEmitter.prototype, {
     all: function () {
       return _questions.slice(0);
@@ -23,6 +27,10 @@
       switch(payload.actionType){
         case QuestionConstants.QUESTIONS_RECEIVED:
           resetQuestions(payload.questions);
+          QuestionStore.emit(CHANGE_EVENT);
+          break;
+        case QuestionConstants.SINGLE_QUESTION_RECEIVED:
+          receiveQuestion(payload.question);
           QuestionStore.emit(CHANGE_EVENT);
           break;
       }

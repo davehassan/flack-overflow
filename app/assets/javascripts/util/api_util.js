@@ -8,6 +8,18 @@ var ApiUtil = {
         ApiActions.receiveAllQuestions(questions);
       }
     });
+  },
+
+  createQuestion: function (question) {
+    $.ajax({
+      url: "/api/questions",
+      type: "POST",
+      dataType: "json",
+      data: { question: question },
+      success: function (question) {
+        ApiActions.receiveSingleQuestion(question);
+      }
+    });
   }
 
 };

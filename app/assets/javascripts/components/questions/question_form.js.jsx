@@ -6,6 +6,7 @@ var QuestionForm = React.createClass({
   createQuestion: function (event) {
     event.preventDefault();
     ApiUtil.createQuestion(this.state);
+    this.props.history.pushState(null, "/questions")
   },
 
   updateTitle: function (event) {
