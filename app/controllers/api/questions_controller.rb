@@ -4,14 +4,14 @@ class Api::QuestionsController < ApplicationController
   end
 
   def show
-    @question = Question.find(params[:id])
+    @question = Question.includes(:asker).includes(answers: [:answerer]).find(params[:id])
   end
 
   def create
     @question = current_user.questions.new(question_params)
 
     if @question.save!
-      render json: @question
+      render :show
     end
   end
 

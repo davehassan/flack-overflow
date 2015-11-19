@@ -18,7 +18,18 @@ var ApiUtil = {
       data: { question: question },
       success: function (question) {
         ApiActions.receiveSingleQuestion(question);
-        callback(question.id);
+        callback && callback(question.id);
+      }
+    });
+  },
+
+  fetchSingleQuestion: function (id) {
+    $.ajax({
+      url: "/api/questions/" + id,
+      type: "GET",
+      dataType: "json",
+      success: function (question) {
+        debugger;
       }
     });
   }

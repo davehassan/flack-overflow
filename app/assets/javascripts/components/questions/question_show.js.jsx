@@ -6,13 +6,7 @@ var QuestionShow = React.createClass({
   },
 
   _fetchQuestion: function (id) {
-    var result;
-    QuestionStore.all().forEach(function (question) {
-      if (id === question.id) {
-        result = question;
-      }
-    }.bind(this));
-    return result;
+    ApiUtil.fetchSingleQuestion(id);
   },
 
   render: function () {
