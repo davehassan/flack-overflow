@@ -13,7 +13,7 @@ Rails and React.js. FlackOverflow allows users to:
 
 - [x] Create an account
 - [x] Log in / Log out
-- [ ] Create, read, edit, and delete questions and answers
+- [x] Create, read, edit, and destroy questions and answers
 - [ ] Vote on questions and answers
 - [ ] Tag questions with multiple tags and search questions by tag
 - [ ] Comments
