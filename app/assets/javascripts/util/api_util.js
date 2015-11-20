@@ -41,7 +41,6 @@ var ApiUtil = {
       dataType: "json",
       data: { answer: answer },
       success: function (answer) {
-        debugger;
         ApiAction.receiveNewAnswer(answer, qId);
       }
     });

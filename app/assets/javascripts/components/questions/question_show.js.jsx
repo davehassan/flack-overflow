@@ -1,7 +1,10 @@
 var QuestionShow = React.createClass({
   getInitialState: function () {
-    var id = parseInt(this.props.params.questionId);
-    return { question: QuestionStore.find(id) };
+    return { question: QuestionStore.find(this.qId()) };
+  },
+
+  qId: function () {
+    return parseInt(this.props.params.questionId);
   },
 
   _fetchQuestion: function (id) {
@@ -10,16 +13,15 @@ var QuestionShow = React.createClass({
 
   componentDidMount: function () {
     QuestionStore.addChangeListener(this._onChange);
-    this._fetchQuestion(this.state.question.id);
+    this._fetchQuestion(this.qId());
   },
 
   _onChange: function () {
-    var question = QuestionStore.find(this.state.question.id);
+    var question = QuestionStore.find(this.qId());
     this.setState({ question: question });
   },
 
   areNoAnswers: function () {
-    debugger;
     return (
       typeof this.state.question.answers === 'undefined' || this.state.question.answers.length === 0
     );
@@ -31,8 +33,8 @@ var QuestionShow = React.createClass({
     } else {
       var res = this.state.question.answers.map(function (answer) {
         return (
-          <div>
-            <small key={answer.id}>Answered by: {answer.answerer.username}</small>
+          <div key={answer.id}>
+            <small>Answered by: {answer.answerer.username}</small>
             <p>{answer.body}</p>
           </div>
         );
@@ -41,14 +43,28 @@ var QuestionShow = React.createClass({
     }
   },
 
+  questionStuff: function () {
+    if (typeof this.state.question !== 'undefined') {
+      return (
+        <div>
+          <div>
+            <small>Asked by: {this.state.question.asker.username}</small>
+            <h5>{this.state.question.title}</h5>
+            <p>{this.state.question.body}</p>
+          </div>
+          {this.answerStuff()}
+        </div>
+      );
+    } else {
+      return <div></div>;
+    }
+  },
+
   render: function () {
     return (
       <div>
-        <h5>{this.state.question.title}</h5>
-        <small>Asked by: {this.state.question.asker.username}</small>
-        <p>{this.state.question.body}</p>
-        {this.answerStuff()}
-        <AnswerForm qId={this.state.question.id}/>
+        {this.questionStuff()}
+        <AnswerForm qId={this.props.params.questionId}/>
       </div>
     );
   }

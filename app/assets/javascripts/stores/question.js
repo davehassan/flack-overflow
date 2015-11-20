@@ -7,11 +7,17 @@
   };
 
   var receiveQuestion = function (question) {
+    var found = false;
     _questions.forEach(function (q, i) {
       if (q.id === question.id) {
         _questions[i] = question;
+        found = true;
       }
     });
+
+    if (!found) {
+      _questions.push(question);
+    }
   };
 
   var receiveNewAnswer = function (answer, questionId) {
