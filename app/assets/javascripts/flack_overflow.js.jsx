@@ -8,7 +8,11 @@ $(function() {
       return (
         <div>
           <Header />
-          {this.props.children}
+          <div className="main">
+            {this.props.children}
+          </div>
+          <div className="sidebar"></div>
+          <div className="footer"></div>
         </div>
       );
     }

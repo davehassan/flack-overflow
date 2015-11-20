@@ -8,6 +8,14 @@ class Api::AnswersController < ApplicationController
     end
   end
 
+  def update
+    @answer = Answer.find(params[:id])
+    @question = @answer.question 
+    if @answer.update(answer_params)
+      render
+    end
+  end
+
   def answer_params
     params.require(:answer).permit(:body)
   end

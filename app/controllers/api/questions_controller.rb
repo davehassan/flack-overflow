@@ -9,8 +9,14 @@ class Api::QuestionsController < ApplicationController
 
   def create
     @question = current_user.questions.new(question_params)
-
     if @question.save!
+      render :show
+    end
+  end
+
+  def update
+    @question = Question.find(params[:id])
+    if @quesiont.update(question_params)
       render :show
     end
   end
