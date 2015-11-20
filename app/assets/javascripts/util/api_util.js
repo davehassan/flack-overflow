@@ -29,7 +29,20 @@ var ApiUtil = {
       type: "GET",
       dataType: "json",
       success: function (question) {
+        ApiActions.receiveSingleQuestion(question);
+      }
+    });
+  },
+
+  createAnswer: function (answer, qId) {
+    $.ajax({
+      url: "api/questions/" + qId + "/answers",
+      type: "POST",
+      dataType: "json",
+      data: { answer: answer },
+      success: function (answer) {
         debugger;
+        ApiAction.receiveNewAnswer(answer, qId);
       }
     });
   }

@@ -11,5 +11,13 @@ var ApiActions = {
       actionType: QuestionConstants.SINGLE_QUESTION_RECEIVED,
       question: question
     });
+  },
+
+  receiveNewAnswer: function (answer, qId) {
+    AppDispatcher.dispatch({
+      actionType: AnswerConstants.NEW_ANSWER_RECEIVED,
+      answer: answer,
+      questionId: qId
+    });
   }
 };

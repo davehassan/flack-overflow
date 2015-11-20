@@ -7,12 +7,31 @@
   };
 
   var receiveQuestion = function (question) {
-    _questions.push(question);
+    _questions.forEach(function (q, i) {
+      if (q.id === question.id) {
+        _questions[i] = question;
+      }
+    });
+  };
+
+  var receiveNewAnswer = function (answer, questionId) {
+    var question = QuestionStore.find(questionId);
+    question.answers.push(answer);
   };
 
   var QuestionStore = root.QuestionStore = $.extend({}, EventEmitter.prototype, {
     all: function () {
       return _questions.slice(0);
+    },
+
+    find: function (id) {
+      var question;
+      _questions.forEach(function (q) {
+        if (q.id === id) {
+          question = q;
+        }
+      });
+      return question;
     },
 
     addChangeListener: function (callback) {
@@ -31,6 +50,10 @@
           break;
         case QuestionConstants.SINGLE_QUESTION_RECEIVED:
           receiveQuestion(payload.question);
+          QuestionStore.emit(CHANGE_EVENT);
+          break;
+        case AnswerConstants.NEW_ANSWER_RECEIVED:
+          receiveNewAnswer(payload.answer, payload.questionId);
           QuestionStore.emit(CHANGE_EVENT);
           break;
       }
