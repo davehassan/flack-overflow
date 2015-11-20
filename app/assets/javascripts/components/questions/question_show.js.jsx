@@ -16,6 +16,10 @@ var QuestionShow = React.createClass({
     this._fetchQuestion(this.qId());
   },
 
+  componentWillUnmount: function () {
+    QuestionStore.removeChangeListener(this._onChange);
+  },
+
   _onChange: function () {
     var question = QuestionStore.find(this.qId());
     this.setState({ question: question });

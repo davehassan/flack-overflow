@@ -7,6 +7,7 @@ $(function() {
     render: function () {
       return (
         <div>
+          <TopBar />
           <Header />
           <div className="main">
             {this.props.children}
