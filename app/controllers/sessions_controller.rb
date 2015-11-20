@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if @user.nil?
       render :new
     else
-      sign_in!(@user)
+      log_in!(@user)
       redirect_to root_url
     end
   end
