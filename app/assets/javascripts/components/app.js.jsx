@@ -1,5 +1,18 @@
 var App = React.createClass({
 
+  getInitialState: function () {
+    return {currentUser: null};
+  },
+
+  componentWillMount: function () {
+    CurrentUserStore.addChangeListener(this.setUser);
+    SessionApiUtil.fetchCurrentUser();
+  },
+
+  setUser: function () {
+    this.setState({currentUser: CurrentUserStore.currentUser()});
+  },
+
   render: function () {
     return (
       <div>

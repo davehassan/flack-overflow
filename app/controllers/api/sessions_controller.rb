@@ -10,12 +10,16 @@ class Api::SessionsController < ApplicationController
       render json: {errors: ["Wrong foolish mortal!"]}, status: 401
     else
       log_in!(@user)
-      render "api/questions/index"
+      render json: @user
     end
   end
 
   def destroy
     log_out!
     render json: {}
+  end
+
+  def show
+    render json: current_user
   end
 end

@@ -25,7 +25,7 @@ var TopBar = React.createClass({
     if (CurrentUserStore.isLoggedIn()) {
       userStuff = (
         <nav className="top-bar-links group">
-          <div>Hello: {CurrentUserStore.currentUser()}</div>
+          <div>Hello: {CurrentUserStore.currentUser().username}</div>
           <button onClick={this.logout}>Log Out!</button>
         </nav>
       );

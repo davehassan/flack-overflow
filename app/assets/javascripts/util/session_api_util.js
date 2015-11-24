@@ -6,7 +6,7 @@ var SessionApiUtil = {
       dataType: "json",
       data: credentials,
       success: function (currentUser) {
-        CurrrentUserActions.receiveCurrentUser(currentUser);
+        CurrentUserActions.receiveCurrentUser(currentUser);
         success && success();
       },
     });
@@ -18,7 +18,7 @@ var SessionApiUtil = {
       type: 'DELETE',
       dataType: 'json',
       success: function () {
-        CurrrentUserActions.receiveCurrentUser({});
+        CurrentUserActions.receiveCurrentUser({});
       },
     });
   },
@@ -29,7 +29,8 @@ var SessionApiUtil = {
       type: 'GET',
       dataType: 'json',
       success: function (currentUser) {
-        CurrrentUserActions.receiveCurrentUser(currentUser);
+        debugger;
+        CurrentUserActions.receiveCurrentUser(currentUser);
       }
     });
   },

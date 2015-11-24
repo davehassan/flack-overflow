@@ -17,7 +17,8 @@ var LogInForm = React.createClass({
   submit: function (e) {
     e.preventDefault();
 
-    SessionApiUtil.login(credentials, function () {
+    debugger;
+    SessionApiUtil.login(this.state, function () {
       this.history.pushState(null, '/');
     }.bind(this));
   },
@@ -42,7 +43,7 @@ var LogInForm = React.createClass({
             onChange={this.changePassword}/>
         </label>
 
-        <button>Log In!</button>
+        <button onClick={this.submit}>Log In!</button>
       </form>
     );
   }

@@ -24,6 +24,7 @@
     dispatcherId: AppDispatcher.register(function (payload) {
       switch (payload.actionType) {
         case CurrentUserConstants.RECEIVE_CURRENT_USER:
+          debugger;
           _currentUser = payload.currentUser;
           CurrentUserStore.emit(CHANGE_EVENT);
           break;
