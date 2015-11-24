@@ -1,15 +1,1 @@
-<div class="top-bar group">
-  <nav class="top-bar-wrapper">
-    <logo class="top-bar-logo">Logo</logo>
-    <nav class="top-bar-links group">
-      <% if logged_in? %>
-        <div><%= "Hello #{current_user.username}" %></div>
-        <div><%= button_to "Sign Out!", session_url, method: :delete %></div>
-      <% else %>
-        <%= link_to "Sign Up!", new_user_url %>
-        <%= link_to "Log In!", new_session_url %>
-      <% end %>
-    </nav>
-  </nav>
-</div>
 <div id="content"></div>

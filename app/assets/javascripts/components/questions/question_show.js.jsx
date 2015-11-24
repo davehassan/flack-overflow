@@ -31,18 +31,26 @@ var QuestionShow = React.createClass({
     );
   },
 
+  acceptAnswer: function (e) {
+    e.preventDefault();
+
+    debugger;
+  },
+
   answerStuff: function () {
     if (this.areNoAnswers()) {
       return <div></div>;
     } else {
+      debugger;
       var res = this.state.question.answers.map(function (answer) {
         return (
-          <div key={answer.id}>
-            <small>Answered by: {answer.answerer.username}</small>
-            <p>{answer.body}</p>
-          </div>
+          <AnswerShow
+            key={answer.id}
+            answer={answer}
+            askerId={this.state.question.asker.id}
+            toggleAccepted={this.acceptAnswer}/>
         );
-      });
+      }.bind(this));
       return <div>{res}</div>;
     }
   },
