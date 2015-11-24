@@ -6,7 +6,7 @@ var UsersApiUtil = {
       dataType: "json",
       data: {user: credentials},
       success: function (currentUser) {
-        debugger;
+         
         CurrentUserActions.receiveCurrentUser(currentUser);
         success && success();
       },

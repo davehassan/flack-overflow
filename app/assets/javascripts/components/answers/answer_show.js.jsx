@@ -2,9 +2,16 @@ var AnswerShow = React.createClass({
 
   answerToggle: function () {
     if (CurrentUserStore.currentUser().id === this.props.askerId) {
-      return <div className={this.setClass} onClick={this.props.toggleAccepted}>&check</div>;
+      return (
+        <button
+          className={this.setClass()}
+          onClick={this.props.toggleAccepted}
+          data-id={this.props.answer.id}>
+          √
+        </button>
+      );
     } else {
-      return <div className={this.setClass}>&check</div>;
+      return <div className={this.setClass}>√</div>;
     }
   },
 
@@ -18,7 +25,7 @@ var AnswerShow = React.createClass({
 
   render: function () {
     return (
-      <div>
+      <div key={this.props.answer.id}>
         <p>{this.props.answer.body}</p>
         <small>Answered by: {this.props.answer.answerer.username}</small>
         {this.answerToggle()}

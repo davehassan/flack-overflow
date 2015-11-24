@@ -16,9 +16,16 @@ class Api::QuestionsController < ApplicationController
 
   def update
     @question = Question.find(params[:id])
-    if @quesiont.update(question_params)
-      render :show
+    if params[:acceptedId]
+      @question.answered = true
+      answer = @question.answers.find(params[:acceptedId]).accepted = true
+      @question.save!
+      answer.save!
+    else
+      
     end
+
+    render :show
   end
 
   def question_params

@@ -34,14 +34,15 @@ var QuestionShow = React.createClass({
   acceptAnswer: function (e) {
     e.preventDefault();
 
-    debugger;
+
+    var answerId = $(e.currentTarget).data("id");
+    ApiUtil.acceptAnswer(this.state.question.id, answerId);
   },
 
   answerStuff: function () {
     if (this.areNoAnswers()) {
       return <div></div>;
     } else {
-      debugger;
       var res = this.state.question.answers.map(function (answer) {
         return (
           <AnswerShow

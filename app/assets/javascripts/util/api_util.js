@@ -41,9 +41,21 @@ var ApiUtil = {
       dataType: "json",
       data: { answer: answer },
       success: function (answer) {
-        ApiAction.receiveNewAnswer(answer, qId);
+        ApiActions.receiveNewAnswer(answer, qId);
       }
     });
-  }
+  },
+
+  acceptAnswer: function (questionId, answerId) {
+    $.ajax({
+      url: "api/questions/" + questionId,
+      type: "PATCH",
+      dataType: "json",
+      data: { acceptedId: answerId },
+      success: function (question) {
+        ApiActions.receiveSingleQuestion(question);
+      }
+    });
+  },
 
 };
