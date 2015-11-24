@@ -29,7 +29,7 @@ var SessionApiUtil = {
       type: 'GET',
       dataType: 'json',
       success: function (currentUser) {
-        debugger;
+        
         CurrentUserActions.receiveCurrentUser(currentUser);
       }
     });

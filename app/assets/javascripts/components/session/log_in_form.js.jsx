@@ -17,7 +17,6 @@ var LogInForm = React.createClass({
   submit: function (e) {
     e.preventDefault();
 
-    debugger;
     SessionApiUtil.login(this.state, function () {
       this.history.pushState(null, '/');
     }.bind(this));

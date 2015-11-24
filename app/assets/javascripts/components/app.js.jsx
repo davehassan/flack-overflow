@@ -1,7 +1,7 @@
 var App = React.createClass({
 
   getInitialState: function () {
-    return {currentUser: null};
+    return {currentUser: {}};
   },
 
   componentWillMount: function () {
